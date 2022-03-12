@@ -1,5 +1,7 @@
 from tkinter import *
+
 tk = Tk()
+brake = '\n'
 labelGrid = 0
 macro = []
 tk.geometry("500x200")
@@ -7,199 +9,270 @@ frame1 = Frame(tk)
 frame2 = Frame(tk)
 frame3 = Frame(tk)
 frame4 = Frame(tk)
-frame1.pack(side = RIGHT)
-frame2.pack(side =TOP)
-frame3.pack(side = TOP)
-frame4.pack(side = BOTTOM)
-A = Button(frame2,text = "A")
-A.grid(row=0,column=1)
-B = Button(frame2,text ="B")
-B.grid(row=0,column=2)
-C = Button(frame2,text ="C")
-C.grid(row=0,column=3)
-D = Button(frame2,text ="D")
-D.grid(row=0,column=4)
-E = Button(frame2,text ="E")
-E.grid(row=0,column=5)
-F = Button(frame2,text ="F")
-F.grid(row=0,column=6)
-G = Button(frame2,text ="G")
-G.grid(row=0,column=7)
-H = Button(frame2,text ="H")
-H.grid(row=0,column=8)
-I = Button(frame2,text ="I")
-I.grid(row=0,column=9)
-J = Button(frame2,text ="J")
-J.grid(row=0,column=10)
-K = Button(frame2,text ="K")
-K.grid(row=0,column=11)
-L = Button(frame2,text ="L")
-L.grid(row=0,column=12)
-M = Button(frame2,text ="M")
-M.grid(row=0,column=13)
-N = Button(frame2,text ="N")
-N.grid(row=0,column=14)
-O = Button(frame2,text ="O")
-O.grid(row=1,column=2)
-P = Button(frame2,text ="P")
-P.grid(row=1,column=3)
-Q = Button(frame2,text ="Q")
-Q.grid(row=1,column=4)
-R = Button(frame2,text ="R")
-R.grid(row=1,column=5)
-S = Button(frame2,text ="S")
-S.grid(row=1,column=6)
-T = Button(frame2,text ="T")
-T.grid(row=1,column=7)
-U = Button(frame2,text ="U")
-U.grid(row=1,column=8)
-V = Button(frame2,text ="V")
-V.grid(row=1,column=9)
-W = Button(frame2,text ="W")
-W.grid(row=1,column=10)
-X = Button(frame2,text ="X")
-X.grid(row=1,column=11)
-Y = Button(frame2,text ="Y")
-Y.grid(row=1,column=12)
-Z = Button(frame2,text ="Z")
-Z.grid(row=1,column=13)
-delay = Button(frame3,text="Delay")
-spacebar = Button(frame3,text="spacebar")
-AText = Label(frame3,text = "Key Press: A")
-BText = Label(frame3,text = "Key Press:B")
-CText = Label(frame3,text = "Key Press:C")
-EText = Label(frame3,text = "Key Press:D")
-FText = Label(frame3,text = "Key Press:E")
-GText = Label(frame3,text = "Key Press:F")
-HText = Label(frame3,text = "Key Press:G")
-IText = Label(frame3,text = "Key Press:H")
-JText = Label(frame3,text = "Key Press:I")
-KText = Label(frame3,text = "Key Press:J")
-LText = Label(frame3,text = "Key Press:K")
-MText = Label(frame3,text = "Key Press:L")
-NText = Label(frame3,text = "Key Press:M")
-OText = Label(frame3,text = "Key Press:N")
-PText = Label(frame3,text = "Key Press:O")
-QText = Label(frame3,text = "Key Press:P")
-RText = Label(frame3,text = "Key Press:Q")
-SText = Label(frame3,text = "Key Press:R")
-TText = Label(frame3,text = "Key Press:S")
-UText = Label(frame3,text = "Key Press:T")
-VText = Label(frame3,text = "Key Press:U")
-WText = Label(frame3,text = "Key Press:V")
-XText = Label(frame3,text = "Key Press:W")
-YText = Label(frame3,text = "Key Press:X")
-ZText = Label(frame3,text = "Key Press:Z")
-DelayText = Label(frame3, text = "Delay")
-
-
+frame1.pack(side=RIGHT)
+frame2.pack(side=TOP)
+frame3.pack(side=TOP)
+frame4.pack(side=BOTTOM)
+A = Button(frame2, text="A")
+A.grid(row=0, column=1)
+B = Button(frame2, text="B")
+B.grid(row=0, column=2)
+C = Button(frame2, text="C")
+C.grid(row=0, column=3)
+D = Button(frame2, text="D")
+D.grid(row=0, column=4)
+E = Button(frame2, text="E")
+E.grid(row=0, column=5)
+F = Button(frame2, text="F")
+F.grid(row=0, column=6)
+G = Button(frame2, text="G")
+G.grid(row=0, column=7)
+H = Button(frame2, text="H")
+H.grid(row=0, column=8)
+I = Button(frame2, text="I")
+I.grid(row=0, column=9)
+J = Button(frame2, text="J")
+J.grid(row=0, column=10)
+K = Button(frame2, text="K")
+K.grid(row=0, column=11)
+L = Button(frame2, text="L")
+L.grid(row=0, column=12)
+M = Button(frame2, text="M")
+M.grid(row=0, column=13)
+N = Button(frame2, text="N")
+N.grid(row=0, column=14)
+O = Button(frame2, text="O")
+O.grid(row=1, column=2)
+P = Button(frame2, text="P")
+P.grid(row=1, column=3)
+Q = Button(frame2, text="Q")
+Q.grid(row=1, column=4)
+R = Button(frame2, text="R")
+R.grid(row=1, column=5)
+S = Button(frame2, text="S")
+display = Label(frame4,text=macro)
+S.grid(row=1, column=6)
+T = Button(frame2, text="T")
+T.grid(row=1, column=7)
+U = Button(frame2, text="U")
+U.grid(row=1, column=8)
+V = Button(frame2, text="V")
+V.grid(row=1, column=9)
+W = Button(frame2, text="W")
+W.grid(row=1, column=10)
+X = Button(frame2, text="X")
+X.grid(row=1, column=11)
+Y = Button(frame2, text="Y")
+Y.grid(row=1, column=12)
+Z = Button(frame2, text="Z")
+Z.grid(row=1, column=13)
+delay = Button(frame2, text="Delay")
+delay.grid(row=3, column = 8)
+spacebar = Button(frame2, text="spacebar")
+spacebar.grid(row=3,column = 7,padx= 10, pady = 10)
+label = Label(text = macro)
 def Acon():
-  AText.pack()
-  macro.append("a")
-
+    global label
+    macro.append("Key press: A")
+    macro.append(brake)
+    label.forget()
+    label = Label(text=macro)
+    label.pack()
 def Bcon():
-  BText.pack()
-  macro.append("b")
-
+    global label
+    macro.append("Key press: B")
+    macro.append(brake)
+    label.forget()
+    label = Label(text=macro)
+    label.pack()
 def Ccon():
-  CText.pack()
-  macro.append("c")
-
+    global label
+    macro.append("Key press: C")
+    macro.append(brake)
+    label.forget()
+    label = Label(text=macro)
+    label.pack()
 def Dcon():
-  DText.pack()
-  macro.append("d")
-  
+    global label
+    macro.append("Key press: D")
+    macro.append(brake)
+    label.forget()
+    label = Label(text=macro)
+    label.pack()
 def Econ():
-  EText.pack()
-  macro.append("e")
-  
+  global label
+  macro.append("Key press: E")
+  macro.append(brake)
+  label.forget()
+  label = Label(text=macro)
+  label.pack()
 def Fcon():
-  FText.pack()
-  macro.append("f")
-  
+    global label  
+    macro.append("Key press: F")
+    macro.append(brake)
+    label.forget()
+    label = Label(text=macro)
+    label.pack()
 def Gcon():
-  GText.pack()
-  macro.append("g")
-  
+    global label
+    macro.append("Key press: G")
+    macro.append(brake)
+    label.forget()
+    label = Label(text=macro)
+    label.pack()
 def Hcon():
-  HText.pack()
-  macro.append("h")
-  
+    global label
+    macro.append("Key press: H")
+    macro.append(brake)
+    label.forget()
+    label = Label(text=macro)
+    label.pack()
 def Icon():
-  IText.pack()
-  macro.append("i")
-  
+    global label
+    macro.append("Key press: I")
+    macro.append(brake)
+    label.forget()
+    label = Label(text=macro)
+    label.pack()
 def Jcon():
-  JText.pack()
-  macro.append("j")
-  
+    global label
+    macro.append("Key press: J")
+    macro.append(brake)
+    label.forget()
+    label = Label(text=macro)
+    label.pack()
 def Kcon():
-  KText.pack()
-  macro.append("k")
-  
+    global label
+    macro.append("Key press: K")
+    macro.append(brake)
+    label.forget()
+    label = Label(text=macro)
+    label.pack()
 def Lcon():
-  LText.pack()
-  macro.append("l")
-  
+    global label
+    macro.append("Key press: L")
+    macro.append(brake)
+    label.forget()
+    label = Label(text=macro)
+    label.pack()
 def Mcon():
-  MText.pack()
-  macro.append("m")
-  
+    global label
+    macro.append("Key press: M")
+    macro.append(brake)
+    label.forget()
+    label = Label(text=macro)
+    label.pack()
 def Ncon():
-  NText.pack()
-  macro.append("n")
-  
+    global label
+    macro.append("Key press: N")
+    macro.append(brake)
+    label.forget()
+    label = Label(text=macro)
+    label.pack()
 def Ocon():
-  OText.pack()
-  macro.append("o")
-  
+    global label
+    macro.append("Key press: O")
+    macro.append(brake)
+    label.forget()
+    label = Label(text=macro)
+    label.pack()
 def Pcon():
-  PText.pack()
-  macro.append("p")
-  
+    global label
+    macro.append("Key press: P")
+    macro.append(brake)
+    label.forget()
+    label = Label(text=macro)
+    label.pack()
 def Qcon():
-  QText.pack()
-  macro.append("q")
-  
+    global label
+    macro.append("Key press: Q")
+    macro.append(brake)
+    label.forget()
+    label = Label(text=macro)
+    label.pack()
 def Rcon():
-  RText.pack()
-  macro.append("r")
-  
+    global label
+    macro.append("Key press: R")
+    macro.append(brake)
+    label.forget()
+    label = Label(text=macro)
+    label.pack()
 def Scon():
-  SText.pack()
-  macro.append("s")
-  
+    global label
+    macro.append("Key press: S")
+    macro.append(brake)
+    label.forget()
+    label = Label(text=macro)
+    label.pack()
 def Tcon():
-  TText.pack()
-  macro.append("t")
-  
+    global label
+    macro.append("Key press: T")
+    macro.append(brake)
+    label.forget()
+    label = Label(text=macro)
+    label.pack()
 def Ucon():
-  UText.pack()
-  macro.append("u")
-  
-def Vcon():
-  VText.pack()
-  macro.append("v")
-  
-def Wcon():
-  WText.pack()
-  macro.append("w")
-  
-def Xcon():
-  XText.pack()
-  macro.append("x")
-  
-def Ycon():
-  YText.pack()
-  macro.append("y")
+    global label
+    macro.append("Key press: U")
+    macro.append(brake)
+    label.forget()
+    label = Label(text=macro)
+    label.pack()
 
+def Vcon():
+    global label
+    macro.append("Key press: V")
+    macro.append(brake)
+    label.forget()
+    label = Label(text=macro)
+    label.pack()
+def Wcon():
+    global label
+    macro.append("Key press: W")
+    macro.append(brake)
+    label.forget()
+    label = Label(text=macro)
+    label.pack()
+def Xcon():
+    global label
+    macro.append("Key press: X")
+    macro.append(brake)
+    label.forget()
+    label = Label(text=macro)
+    label.pack()
+def Ycon():
+    global label
+    YText.pack()
+    macro.append("Key press: Y")
+    macro.append(brake)
+    label.forget()
+    label = Label(text=macro)
+    label.pack()
 def Zcon():
-  ZText.pack()
-  macro.append("z")
-A.config(command = Acon)
-B.config(command = Bcon)
-C.config(command = Ccon)
-D.config(command= Dcon)
+    global label
+    macro.append("Key press: Z")
+    macro.append(brake)
+    label.forget()
+    label = Label(text=macro)
+    label.pack()
+def DelayCon():
+  global label
+  macro.append("Delay 1 second")
+  macro.append(brake)
+  label.forget()
+  label = Label(text=macro)
+  label.pack()
+def SpacebarCon():
+  global label
+  macro.append("Key press: Spacebar")
+  macro.append(brake)
+  label.forget()
+  label = Label(text=macro)
+  label.pack()
+A.config(command=Acon)
+B.config(command=Bcon)
+C.config(command=Ccon)
+D.config(command=Dcon)
 E.config(command=Econ)
 F.config(command=Fcon)
 G.config(command=Gcon)
@@ -222,6 +295,5 @@ W.config(command=Wcon)
 X.config(command=Xcon)
 Y.config(command=Ycon)
 Z.config(command=Zcon)
-  
-
-
+delay.config(command=DelayCon)
+spacebar.config(command = SpacebarCon)
